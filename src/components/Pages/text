@@ -1,0 +1,164 @@
+import React, {useState} from 'react'
+const searchBar = () => {
+
+    const [searchInput, setSearchInput] = useState("");
+   
+
+const codeService = [
+
+{
+    "nomService":"front end",
+    "code":1,
+    "ville":"agadir",
+    "emplye":[
+        {"idEmplye":1,"nom":"ahmed","salary":1500},
+        {"idEmplye":2,"nom":"jamale","salary":2500},
+        {"idEmplye":3,"nom":"3azize","salary":5842},
+        {"idEmplye":4,"nom":"hamza","salary":2368},
+        {"idEmplye":5,"nom":"khalid","salary":7892},
+        {"idEmplye":6,"nom":"jalal","salary":1000},
+        {"idEmplye":7,"nom":"nasire","salary":8000}
+        ]
+},
+{
+    "nomService":"fback end",
+    "code":2,
+    "ville":"casa bloncka",
+    "emplye":[
+        {"idEmplye":1,"nom":"ahmed","salary":1500},
+        {"idEmplye":2,"nom":"jamale","salary":2500},
+        {"idEmplye":3,"nom":"3azize","salary":5842},
+        {"idEmplye":4,"nom":"hamza","salary":2368},
+        {"idEmplye":5,"nom":"khalid","salary":7892},
+        {"idEmplye":6,"nom":"jalal","salary":1000},
+        {"idEmplye":7,"nom":"nasire","salary":8000}
+        ]
+}
+,
+{
+"nomService":"web desgin",
+"code":3,
+"ville":"agadir",
+"emplye":[
+    {"idEmplye":1,"nom":"ahmed","salary":1500},
+    {"idEmplye":2,"nom":"jamale","salary":2500},
+    {"idEmplye":3,"nom":"3azize","salary":5842},
+    {"idEmplye":4,"nom":"hamza","salary":2368},
+    {"idEmplye":5,"nom":"khalid","salary":7892},
+    {"idEmplye":6,"nom":"jalal","salary":1000},
+    {"idEmplye":7,"nom":"nasire","salary":8000}
+    ]
+}
+,
+{
+"nomService":"UI Desgin",
+"code":4,
+"ville":"agadir",
+"emplye":[
+    {"idEmplye":1,"nom":"ahmed","salary":1500},
+    {"idEmplye":2,"nom":"jamale","salary":2500},
+    {"idEmplye":3,"nom":"3azize","salary":5842},
+    {"idEmplye":4,"nom":"hamza","salary":2368},
+    {"idEmplye":5,"nom":"khalid","salary":7892},
+    {"idEmplye":6,"nom":"jalal","salary":1000},
+    {"idEmplye":7,"nom":"nasire","salary":8000}
+    ]
+}
+,
+{
+"nomService":"UX Desgin",
+"code":5,
+"ville":"raba",
+"emplye":[
+    {"idEmplye":1,"nom":"ahmed","salary":3211},
+    {"idEmplye":2,"nom":"jamale","salary":2500},
+    {"idEmplye":3,"nom":"3azize","salary":7000},
+    {"idEmplye":4,"nom":"hamza","salary":8795},
+    {"idEmplye":5,"nom":"khalid","salary":7892},
+    {"idEmplye":6,"nom":"jalal","salary":1000},
+    {"idEmplye":7,"nom":"nasire","salary":3000}
+    ]
+}
+,
+{
+"nomService":"AI",
+"code":6,
+"ville":"phase",
+"emplye":[
+    {"idEmplye":1,"nom":"zakaria","salary":8888},
+    {"idEmplye":2,"nom":"reda","salary":2000},
+    {"idEmplye":3,"nom":"redoine","salary":8710},
+    {"idEmplye":4,"nom":"yousef","salary":2368},
+    {"idEmplye":5,"nom":"younse","salary":1200},
+    {"idEmplye":6,"nom":"ya3ela","salary":5000},
+    {"idEmplye":7,"nom":"3alawy","salary":8000}
+    ]
+}
+
+];
+
+const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+  
+  if (searchInput.length > 0) {
+      codeService.filter((code) => {
+      return code.nom.match(searchInput);
+  });
+  }
+  
+  return <div>
+  
+  <input
+     type="search"
+     placeholder="Search here"
+     onChange={handleChange}
+     value={searchInput} />
+  
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Salaire</th>
+    </tr>
+  
+  {codeService.map((code, *index*) => {
+  
+  <div>
+    <tr>
+      <td>{code.id}</td>
+      <td>{code.nom}</td>
+      <td>{code.salary}</td>
+    </tr>
+  </div>
+  
+  })}
+  </table>
+  
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
